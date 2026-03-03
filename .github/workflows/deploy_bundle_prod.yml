@@ -1,8 +1,11 @@
 name: Databricks Bundle CI/CD
 on:
-  push:
-    branches-ignore:
-      - main
+    push:
+        branches:
+        - main
+    pull_request:
+        branches:
+        - main
 
 jobs:
   # Used by the "pipeline_update" job to deploy the bundle.
@@ -22,14 +25,14 @@ jobs:
       # See https://github.com/databricks/setup-cli
       - uses: databricks/setup-cli@main
 
-      # Deploy the bundle to the "dev" target as defined
+      # Deploy the bundle to the "prod" target as defined
       # in the bundle's settings file.
       - run: databricks bundle validate
         working-directory: .
         env:
           DATABRICKS_TOKEN: ${{ secrets.SP_TOKEN }}
           DATABRICKS_HOST: ${{ secrets.DATABRICKS_HOST }}
-          DATABRICKS_BUNDLE_ENV: dev
+          DATABRICKS_BUNDLE_ENV: prod
 
   # Validate, deploy, and then run the bundle.
   dbt_job_run:
@@ -46,11 +49,10 @@ jobs:
       # Use the downloaded Databricks CLI.
       - uses: databricks/setup-cli@main
 
-      # Run the Databricks workflow named "sample_job" as defined in the
       # bundle that was just deployed.
       - run: databricks bundle deploy
         working-directory: .
         env:
           DATABRICKS_TOKEN: ${{ secrets.SP_TOKEN }}
           DATABRICKS_HOST: ${{ secrets.DATABRICKS_HOST }}
-          DATABRICKS_BUNDLE_ENV: dev
+          DATABRICKS_BUNDLE_ENV: prod
