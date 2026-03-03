@@ -1,0 +1,15 @@
+version : 2
+sources:
+  - name: northwind # This is the name of the source, which can be referenced in your models.
+    schema: raw_data
+    catalog: northwind
+    tables:
+      - name: shippers
+        description: "The shippers table contains information about the shipping companies used to deliver orders, including the shipper ID, company name, and contact information."
+        columns:
+          - name: shipper_id
+            description: "The unique identifier for each shipping company."
+          - name: company_name
+            description: "The name of the shipping company."
+          - name: phone
+            description: "The contact phone number for the shipping company."

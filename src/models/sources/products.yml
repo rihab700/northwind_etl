@@ -1,0 +1,29 @@
+version : 2
+sources :
+  - name : northwind # This is the name of the source, which can be referenced in your models.
+    schema: raw_data
+    catalog: northwind
+    tables:
+      - name: products
+        description: "The products table contains information about the products available for sale, including their unique identifiers, names, supplier IDs, category IDs, quantities per unit, unit prices, and stock levels."
+        columns:
+          - name: product_id
+            description: "The unique identifier for each product."
+          - name: product_name
+            description: "The name of the product."
+          - name: supplier_id
+            description: "The unique identifier for the supplier of the product, which can be used to join with the suppliers table."
+          - name: category_id
+            description: "The unique identifier for the category of the product, which can be used to join with the categories table."
+          - name: quantity_per_unit
+            description: "The quantity of the product included in a single unit (e.g., '10 boxes x 20 bags')."
+          - name: unit_price
+            description: "The price of a single unit of the product."
+          - name: units_in_stock
+            description: "The number of units of the product currently in stock."
+          - name: units_on_order
+            description: "The number of units of the product currently on order."
+          - name: reorder_level
+            description: "The minimum number of units in stock before a reorder is triggered."
+          - name: discontinued
+            description: "A boolean value indicating whether the product is discontinued (true) or not (false)."
