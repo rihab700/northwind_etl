@@ -28,5 +28,5 @@ clean-targets: # directories to be removed by `dbt clean`
 models:
   northwind:
     # Config indicated by + and applies to all files under models/example/
-    example:
-      +materialized: view
+    serving :
+        +materialized: table # this full refreshes the table every time it is run. For incremental models, use 'incremental'

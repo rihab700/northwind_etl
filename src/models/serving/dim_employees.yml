@@ -1,0 +1,23 @@
+version : 2
+models:
+  - name: dim_employees
+    description: "This is the dimension table for employees."
+    columns:
+      - name: employee_key
+        description: "Surrogate key for the employee."
+        tests:
+          - not_null
+          - unique
+      - name: employee_id
+        description: "The original employee ID from the source system."
+        tests:
+          - not_null
+          - unique
+      - name: first_name
+        description: "The first name of the employee."
+      - name: last_name
+        description: "The last name of the employee."
+      - name: title
+        description: "The job title of the employee."
+
+  

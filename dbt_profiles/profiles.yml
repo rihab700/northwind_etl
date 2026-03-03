@@ -13,8 +13,8 @@ northwind:
     dev:
       type: databricks
       method: http
-      catalog: dev_workspace
-      schema: default
+      catalog: northwind
+      schema: serving_data
 
       http_path: /sql/1.0/warehouses/68b61b6406ad06e8
 
@@ -27,8 +27,8 @@ northwind:
     prod:
       type: databricks
       method: http
-      catalog: dev_workspace
-      schema: default
+      catalog: northwind
+      schema: serving_data
 
       http_path: /sql/1.0/warehouses/68b61b6406ad06e8
 

@@ -1,0 +1,40 @@
+version : 2
+models:
+  - name: fact_sales
+    description: "Fact table for sales data"
+    columns:
+      - name: sales_id
+        description: "Unique identifier for each sale"
+        tests:
+          - unique
+          - not_null
+      - name: order_id
+        description: "Identifier for the order associated with the sale"
+      - name: customer_id
+        description: "Identifier for the customer who made the purchase"
+      - name: employee_id
+        description: "Identifier for the employee who processed the sale"
+      - name: product_id
+        description: "Identifier for the product sold"
+      - name : order_date
+        description: "Date when the order was placed"
+      - name: required_date
+        description: "Date when the order is required to be delivered"
+      - name: shipped_date
+        description: "Date when the order was shipped"
+      - name: unit_price
+        description: "Unit price of the product sold"
+      - name: quantity
+        description: "Quantity of products sold"
+      - name: discount
+        description: "Discount applied to the sale"
+      - name: gross_sales
+        description: "Total amount of the gross sales"
+      - name : total_sales
+        description: "Total amount of the sale after discount"
+      - name: product_key
+        description: "Foreign key to the product dimension"
+      - name: customer_key
+        description: "Foreign key to the customer dimension"
+      - name: employee_key
+        description: "Foreign key to the employee dimension"

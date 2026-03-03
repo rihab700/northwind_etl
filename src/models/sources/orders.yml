@@ -1,0 +1,37 @@
+version : 2
+sources:
+  - name: northwind # This is the name of the source, which can be referenced in your models.
+    schema: raw_data
+    catalog: northwind
+    tables:
+      - name: orders
+        description: "The orders table contains information about customer orders, including the order ID, customer ID, order date, and shipping details."
+        columns:
+          - name: order_id
+            description: "The unique identifier for each order."
+          - name: customer_id
+            description: "The unique identifier for the customer who placed the order."
+          - name: employee_id
+            description: "The unique identifier for the employee who processed the order."
+          - name: order_date
+            description: "The date when the order was placed."
+          - name: required_date
+            description: "The date by which the order is required to be delivered."
+          - name: shipped_date
+            description: "The date when the order was shipped."
+          - name: ship_via
+            description: "The unique identifier for the shipping method used for the order."
+          - name: freight
+            description: "The cost of shipping the order."
+          - name: ship_name
+            description: "The name of the recipient or company receiving the shipment."
+          - name: ship_address
+            description: "The street address where the shipment is to be delivered."
+          - name: ship_city
+            description: "The city where the shipment is to be delivered."
+          - name: ship_region
+            description: "The region or state where the shipment is to be delivered."
+          - name: ship_postal_code
+            description: "The postal code for the delivery address of the shipment."
+          - name: ship_country
+            description: "The country where the shipment is to be delivered."

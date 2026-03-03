@@ -1,0 +1,31 @@
+version : 2
+sources:
+  - name : northwind # This is the name of the source, which can be referenced in your models.
+    schema: raw_data
+    catalog: northwind
+    tables:
+      - name: customers
+        description: "The customers table contains information about the customers who have placed orders, including their unique identifiers, company names, contact information, and addresses."
+        columns:
+          - name: customer_id
+            description: "The unique identifier for each customer."
+          - name: company_name
+            description: "The name of the customer's company."
+          - name: contact_name
+            description: "The name of the primary contact person for the customer."
+          - name: contact_title
+            description: "The job title of the primary contact person for the customer."
+          - name: address
+            description: "The street address of the customer's company."
+          - name: city
+            description: "The city where the customer's company is located."
+          - name: region
+            description: "The region or state where the customer's company is located."
+          - name: postal_code
+            description: "The postal code for the customer's company's address."
+          - name: country
+            description: "The country where the customer's company is located."
+          - name: phone
+            description: "The contact phone number for the customer's company."
+          - name: fax
+            description: "The fax number for the customer's company."

@@ -1,0 +1,19 @@
+version: 2
+sources:
+  - name: northwind # This is the name of the source, which can be referenced in your models.
+    schema: raw_data
+    catalog: northwind
+    tables:
+      - name: order_details
+        description: "The order details table contains information about the products included in each order, such as the product ID, quantity, and price."
+        columns:
+          - name: order_id
+            description: "The unique identifier for each order."
+          - name: product_id
+            description: "The unique identifier for each product included in the order."
+          - name: unit_price
+            description: "The price of a single unit of the product at the time of the order."
+          - name: quantity
+            description: "The number of units of the product included in the order."
+          - name: discount
+            description: "The discount applied to the product in the order, represented as a decimal (e.g., 0.1 for 10% off)."

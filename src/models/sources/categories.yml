@@ -1,0 +1,17 @@
+version : 2
+sources : 
+  - name : northwind # This is the name of the source, which can be referenced in your models.
+    schema: raw_data
+    catalog: northwind
+    tables:
+      - name: categories
+        description: "The categories table contains information about the different product categories, including their unique identifiers, category names, and descriptions."
+        columns:
+          - name: category_id
+            description: "The unique identifier for each product category."
+          - name: category_name
+            description: "The name of the product category."
+          - name: description
+            description: "A brief description of the product category."
+          - name: picture
+            description: "An image representing the product category, stored as binary data."
